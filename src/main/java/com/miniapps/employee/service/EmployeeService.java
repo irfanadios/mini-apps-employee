@@ -100,7 +100,7 @@ public class EmployeeService {
 
         Employee employee = employeeRepository.getReferenceById(id);
 
-        if (employeeRepository.existsByNik(request.getNik()).booleanValue() && !request.getNik().equalsIgnoreCase(employee.getNik())) {
+        if (employeeRepository.existsByNik(request.getNik()).booleanValue()) {
             return DataResponseBuilder.<EmployeeGetResponse>builder()
                 .code(HttpStatus.BAD_REQUEST.value())
                 .status("Fail")
