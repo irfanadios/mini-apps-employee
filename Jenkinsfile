@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'cd mini-apps-employee'
+                sh 'ls'
+                // sh 'cd mini-apps-employee'
                 sh 'mvn test'
             }
         }
