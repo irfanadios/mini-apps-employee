@@ -1,9 +1,12 @@
 pipeline {
     agent any
 
-    stages('test') {
-        steps {
-            sh 'mvn test'
+    stages {
+        stage('Test') {
+            steps {
+                sh 'cd mini-apps-employee'
+                sh 'mvn test'
+            }
         }
     }
 }
