@@ -91,6 +91,7 @@ class TestUpdateEmployee {
         .build();
 
         when(employeeRepository.existsById(anyLong())).thenReturn(true);
+        when(employeeRepository.getReferenceById(anyLong())).thenReturn(employee1);
         when(employeeRepository.existsByNik(anyString())).thenReturn(true);
 
         DataResponseBuilder<EmployeeGetResponse> response = employeeService.updateEmployee(id, request);
